@@ -1,0 +1,156 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    color: #990000;
+}
+
+h2 {
+    border-bottom: 2px solid #990000;
+    padding-bottom: 10px;
+}
+
+p {
+    color: #666;
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #990000;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #990000;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 20px 0 40px;
+}
+
+a:hover {
+    background-color: #660000;
+}
+
+a[name="entry"]:hover {
+    background-color:  #ffb6b6;
+}
+
+
+input[type="submit"] {
+    background-color: #990000;
+    color: white;  /* テキストの色 */
+    padding: 10px 20px;  /* パディング */
+    border: none;  /* ボーダーをなくす */
+    border-radius: 5px;  /* ボーダーの角を丸くする */
+    cursor: pointer;  /* マウスオーバー時にカーソルを変更 */
+}
+
+/* マウスオーバー時のスタイル */
+input[type="submit"]:hover {
+    background-color: #660000;  /* マウスオーバー時の背景色 */
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%; /* Make the card expand to fit the container */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+}
+.card__imgframe{
+width: 100%;
+height: auto;
+padding-top: 56.25%;
+background: #bbb;
+box-sizing: border-box;
+}
+.card__textbox{
+width: 100%;
+height: auto;
+padding: 20px 18px;
+background: #fff;
+box-sizing: border-box;
+}
+.card__textbox > * + *{
+margin-top: 10px;
+}
+.card__titletext{
+font-size: 20px;
+font-weight: bold;
+line-height: 125%;
+}
+.card__overviewtext{
+font-size: 12px;
+line-height: 150%;
+}
+
+.card td[name="word"] {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.card__imgframe {
+    width: 100%;
+    height: auto;
+    padding-top: 56.25%;
+    background: #ddd; /* やや明るめの灰色 */
+    box-sizing: border-box;
+    background-size: cover; /* 画像を全体に広げて表示 */
+    background-position: center; /* 画像を中央に配置 */
+    background-image: url('https://stpatonastaticdev.blob.core.windows.net/public/LINE/krmxpu/kiramex_popup_qir.png'); /* 画像のURLを設定 */
+}
+
+.button-054 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 250px;
+    margin: 0 auto;
+    padding: .9em 3em .9em 2em;
+    border: 1px solid #990000;
+    border-radius: 25px;
+    background-color: #fff;
+    color: #990000;
+    font-size: 1em;
+}
+
+.button-054::after {
+    position: absolute;
+    right: 2em;
+    transform: translateY(-50%);
+    transform-origin: left;
+    width: 2em;
+    height: .5em;
+    background-color: #660000;
+    clip-path: polygon(0 100%, 100% 100%, 70% 40%, 70% 90%, 0% 90%);
+    content: '';
+    transition: transform .3s;
+}
+
+.button-054:hover::after {
+    transform: translateY(-50%) scaleX(1.4);
+}

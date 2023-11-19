@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>スラングディクショナリ</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style2.css')}}">
+    </head>
+        <body>
+            <h1>スラングディクショナリ</h1>
+            <form method="post" action="{{url_for('register')}}">
+                <table border="1">
+                    <tr>
+                        <th>ワード</th>
+                        <th>解説</th>
+                        <th>user_id</th>
+                    </tr>
+                        <tr>
+                            <td><input type="text" name="word"></td>
+                            <td><input type="text" name="description"></td>
+                            <td><input type="text" name="user_id"></td>
+                        </tr>
+                </table>
+                <br>
+                <input type="submit" value="登録">
+                <br>
+                <a href="{{ url_for('index') }}">戻る</a>
+            </form>
+        </body>
+    </head>
+</html>

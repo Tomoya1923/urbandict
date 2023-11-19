@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>スラングディクショナリ</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}">
+    </head>
+        <body>
+            <h1>すらんゴ</h1>
+            <p>本当に"{{ word }}"を削除しますか?</p>
+
+            <form method="post">
+                <input type="submit" value="はい">
+            </form>
+        
+            <a href="{{ url_for('index') }}">戻る</a>
+        </body>
+    </head>
+</html>

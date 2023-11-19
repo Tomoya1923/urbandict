@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>スラングディクショナリ</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style2.css')}}">
+    </head>
+        <body>
+            <h1>すらんゴ</h1>
+            <br>
+            <form action="{url_for('form')}" class="search-form-002">
+                <label>
+                    <input type="text" placeholder="単語を入力">
+                </label>
+                <button type="submit" aria-label="検索"></button>
+            </form>
+            <br>
+            <h2 class="heading-016">最新すらんゴ</h2>
+                {% if dicts == [] %}
+                    <p>最新スラングはありません</p>
+                {% else %}
+                        {% for dict in dicts %}
+                        <table class="card">
+                            <tr><td name="word">{{ dict.word }}</td></tr>
+                            <tr><td>{{ dict.description }}</td></tr>
+                            <tr><td>{{ dict.uder_id }}</td></tr>
+                            <tr><td><br></td></tr>
+                            <td>
+                                <a href="{{url_for('index')}}">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ai ai-Heart"><path d="M7 3C4.239 3 2 5.216 2 7.95c0 2.207.875 7.445 9.488 12.74a.985.985 0 0 0 1.024 0C21.125 15.395 22 10.157 22 7.95 22 5.216 19.761 3 17 3s-5 3-5 3-2.239-3-5-3z"/></svg>
+                                </a>
+                            </td>
+                            <td><a href="{{url_for('delete', word=dict.word)}}" class="button-051">削除</a></td>
+                        </table>
+                        {% endfor %}
+                {% endif %}
+            <br>
+            <a href="{{url_for('form')}}" class="button-061">すらんゴを登録</a>
+            <br>
+            <br>
+        </body>
+    <footer class="footer-002">
+        <a href="{{url_for('index')}}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ai ai-Heart"><path d="M7 3C4.239 3 2 5.216 2 7.95c0 2.207.875 7.445 9.488 12.74a.985.985 0 0 0 1.024 0C21.125 15.395 22 10.157 22 7.95 22 5.216 19.761 3 17 3s-5 3-5 3-2.239-3-5-3z"/></svg>
+        </a>
+        <br>
+        <p class="footer-002__copyright">@ 2023 Slango All rights reserved.</p>
+    </footer>
+</html>
